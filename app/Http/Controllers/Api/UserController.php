@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function index() : JsonResponse {
-        $users = User::orderBy("id","DESC")->paginate(1);
+        $users = User::orderBy("id","DESC")->paginate(10);
         return response()->json([
             'status' => true,
             'users' => $users, ]
