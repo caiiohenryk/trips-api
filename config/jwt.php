@@ -160,6 +160,7 @@ return [
     'persistent_claims' => [
         // 'foo',
         // 'bar',
+        'user_id',
     ],
 
     /*
