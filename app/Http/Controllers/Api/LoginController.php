@@ -16,6 +16,14 @@ class LoginController extends Controller
         return $this->respondWithToken($token);
     }
 
+    public function unauthorized() {
+        $credentials = request(['email', 'password']);
+        
+        if (!$token = auth()->attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+    }
+
     public function me()
     {
         return response()->json(auth()->user());
