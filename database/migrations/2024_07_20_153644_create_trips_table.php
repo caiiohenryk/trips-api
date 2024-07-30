@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('date'); // Trip date. Ex: 2024-04-12
-            $table->integer('local_id');
+            $table->date('date'); // Trip date. Ex: 2024-04-12
             $table->string('status'); // Trip status. Ex: Done, Current;
             $table->timestamps();
         });

@@ -9,7 +9,10 @@ class Trip extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['date', 'local_id', 'status'];
+
     public function local() {
         return $this->belongsTo(Local::class);
     }
+    
 }

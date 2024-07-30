@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\LocalController;
 use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\TripController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,4 +27,12 @@ Route::group([
     Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:api')->name('logout');
     Route::post('/refresh', [LoginController::class, 'refresh'])->middleware('auth:api')->name('refresh');
     Route::post('/me', [LoginController::class, 'me'])->middleware('auth:api')->name('me');
+});
+
+Route::group(['prefix'=>'trips'], function(){
+    Route::post('', [TripController::class, 'store'])->name('post');
+});
+
+Route::group(['prefix'=> 'locals'], function(){
+    Route::post('', [LocalController::class, 'store'])->name('post');
 });

@@ -9,6 +9,8 @@ class Local extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nome', 'uf'];
+
     public function trips() {
         return $this->hasMany(Trip::class);
     }

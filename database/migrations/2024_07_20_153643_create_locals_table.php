@@ -13,8 +13,13 @@ return new class extends Migration
     {
         Schema::create('locals', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('uf');
             $table->timestamps();
         });
+
+
+
     }
 
     /**
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('locals');
+        Schema::dropIfExists('locais');
     }
 };
